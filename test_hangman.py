@@ -93,3 +93,8 @@ def test_check_game_next_turn():
 def test_game_win():
     word = 'elephant'
     assert hangman.check_game_loop('elephant',word,['z',]) == False
+
+
+def test_game_out_of_turns():
+    word = 'elephant'
+    assert hangman.check_game_loop('-leph-nt', word,['z','y','x','j','k','o','q','u']) == False
