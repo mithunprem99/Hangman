@@ -92,4 +92,4 @@ def test_check_game_next_turn():
 
 def test_game_win():
     word = 'elephant'
-    assert hangman.check_game_loop('elephant',word,'_') == False
+    assert hangman.check_game_loop('elephant',word,['z',]) == False
