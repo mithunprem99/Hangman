@@ -26,6 +26,9 @@ def check_game_win(word , guess):
     else:
         return "You Lose!"
 
+def get_partial_solution(word):
+    return '-'*len(word)
+
 
     
        

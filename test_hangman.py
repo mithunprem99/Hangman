@@ -76,3 +76,11 @@ def test_check_game_win():
 def test_check_game_win():
     word = "elephant"
     assert hangman.check_game_win(word, '_lephant') == 'You Lose!'
+
+# def test_user_guesses():
+#     word = 'elephant'
+#     assert 
+
+def test_partial_solution_input():
+    word = 'elephant'
+    assert hangman.get_partial_solution(word)=='--------'
