@@ -64,5 +64,8 @@ def test_masked_word_correct_guess():
     word = "elephant"
     assert hangman.masked_word(word, ["e","l" ,"p","h", "a",'n','t']) == "elephant"
 
-# def test_masked_word_repeated_letters():
-#     assert
+
+def test_masked_word_repeated_letters():
+    assert hangman,masked_word(word, ['e']) == 'e-e-----'
+
+
