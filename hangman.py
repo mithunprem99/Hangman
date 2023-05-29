@@ -28,12 +28,3 @@ def check_game_win(word , guess):
 
 def get_partial_solution(word):
     return '-'*len(word)
-
-
-    
-       
-
-
-
-
-
