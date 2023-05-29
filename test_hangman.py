@@ -73,5 +73,6 @@ def test_check_game_win():
     word = 'elephant'
     assert hangman.check_game_win(word, 'elephant') == 'You Win!'
 
-# def test_check_game_over_lose():
-#     assert hangman.check_game_over('hangman', '_angman') == 'You Lose!, the Mystery Word was -> hangman'
+def test_check_game_win():
+    word = "elephant"
+    assert hangman.check_game_win(word, '_lephant') == 'You Lose!'

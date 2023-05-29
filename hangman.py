@@ -24,7 +24,7 @@ def check_game_win(word , guess):
     if word == guess:
         return "You Win!"
     else:
-        return "You loss"
+        return "You Lose!"
 
 
     
