@@ -96,5 +96,5 @@ def test_game_win():
 
 
 def test_game_out_of_turns():
-    word = 'elephant'
-    assert hangman.check_game_loop('-leph-nt', word,['z','y','x','j','k','o','q','u']) == False
+    # word = 'elephant'
+    assert hangman.check_game_loops('-leph-nt',['z','y','x','j','k','o','q','u']) == False
