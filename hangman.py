@@ -34,3 +34,4 @@ def check_game_loop(partial_word , word, guesses):
     if partial_word != word:
         return True
     return False
+

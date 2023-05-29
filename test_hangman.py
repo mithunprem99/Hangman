@@ -88,4 +88,8 @@ def test_partial_solution_input():
 
 def test_check_game_next_turn():
     word = 'elephant'
-    assert hangman.check_game_loop('_lephant', 'elephant', ['w', 'y']) == True
+    assert hangman.check_game_loop('_lephant', word, ['w', 'y']) == True
+
+def test_game_win():
+    word = 'elephant'
+    assert hangman.check_game_loop('elephant',word,'_') == False
