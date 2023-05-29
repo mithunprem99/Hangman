@@ -28,3 +28,9 @@ def check_game_win(word , guess):
 
 def get_partial_solution(word):
     return '-'*len(word)
+
+
+def check_game_loop(partial_word , word, guesses):
+    if partial_word != word:
+        return True
+    return False
