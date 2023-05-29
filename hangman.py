@@ -19,6 +19,14 @@ def masked_word(word, guess):
         else:
             guess_word.append("-")
     return "".join(guess_word)
+
+def check_game_win(word , guess):
+    if word == guess:
+        return "You Win!"
+    else:
+        return "You loss"
+
+
     
        
 
