@@ -11,15 +11,14 @@ def get_random_word(wordfile = "/usr/share/dict/words"):
     word = random.choice(candidate_words)
     return word
 
-def masked_word(word, guess_word):
+def masked_word(word, guess):
     guess_word= []
     for i in word:
-        if i in word:
-            guess_word.append(i)
+        if i in guess:
+            guess_word.append(guess)
         else:
-            return'-'*len(guess_word)
-
-    return '-'*len(guess_word)
+            guess_word.append("-")
+    return "".join(guess_word)
        
 
 

@@ -50,7 +50,7 @@ def test_select_random_word_no_repetitions():
             
 def test_masked_word_no_guesses():
     word = "elephant"
-    assert hangman.masked_word(word,'--------')== '--------'
+    assert hangman.masked_word(word,[])== '--------'
 
 def test_masked_word_wrong_guess():
     word = "elephant"
