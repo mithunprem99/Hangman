@@ -100,6 +100,19 @@ def test_check_already_guessed():
     assert guesses == ["e", "p",]
 
 
+def test_check_correct_word():
+    word = "elephant"
+    guesses = ["a", "t"]
+    turns_remaining = 6
+    new_guess = "i"
+    status, remaining_turns = hangman.check(word, guesses, 
+                                            remaining_turns, 
+                                            new_guess)
+    assert status == hangman.Correct
+    assert remaining_turns == 6
+    assert guesses == ["a", "t", "i"]
+
+
 # def test_check_game_win():
 #     word = 'elephant'
 #     assert hangman.check_game_win(word, 'elephant') == 'You Win!'
