@@ -2,6 +2,7 @@ import os
 import tempfile
 import hangman
 
+
 def test_select_random_word_min_length():
     # create temporary file
     name = tempfile.mktemp()
@@ -85,6 +86,20 @@ def test_get_status_no_guesses():
     assert hangman.get_status(secret_word, guesses, turns_remaining) == """Secret word:--------
 Guesses : 
 Remaining turns : 7"""
+
+def test_check_already_guessed():
+    word = "elephant"
+    guesses = ["e", "p"]
+    remaining_turns = 5
+    new_guess = "p"
+    status, remaining_turns = hangman.check_guesses(word, guesses, 
+                                            remaining_turns, 
+                                            new_guess)
+    assert status == hangman.Guessed_word
+    assert remaining_turns == 5
+    assert guesses == ["e", "p",]
+
+
 # def test_check_game_win():
 #     word = 'elephant'
 #     assert hangman.check_game_win(word, 'elephant') == 'You Win!'

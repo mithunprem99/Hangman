@@ -1,6 +1,8 @@
 import random
 
-
+Guessed_word = 0
+Correct =1
+Wrong = 2
 def get_random_word(wordfile = "/usr/share/dict/words"):
     candidate_words = []
     with open(wordfile) as f:
@@ -48,6 +50,16 @@ def get_status(secret_word, guesses, turns_remaining):
     return f"""Secret word:{mask_word}
 Guesses : {guessed_letters}
 Remaining turns : {turns_remaining}"""
+
+def check_guesses(word, guesses, remaining_turns, new_guess):
+    if new_guess in guesses:
+        return Guessed_word, remaining_turns
+    else:
+        guesses.append(new_guess)
+        if new_guess in word:
+            return Correct, remaining_turns
+        else:
+            return Wrong, remaining_turns-1
 
 
 # def main():
