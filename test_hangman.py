@@ -78,6 +78,13 @@ def test_get_status_basic():
 Guesses : c o x
 Remaining turns : 3"""
 
+def test_get_status_no_guesses():
+    secret_word = "elephant"
+    guesses = []
+    turns_remaining = 7
+    assert hangman.get_status(secret_word, guesses, turns_remaining) == """Secret word:--------
+Guesses : 
+Remaining turns : 7"""
 # def test_check_game_win():
 #     word = 'elephant'
 #     assert hangman.check_game_win(word, 'elephant') == 'You Win!'
