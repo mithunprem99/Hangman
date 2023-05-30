@@ -62,14 +62,14 @@ def check_guesses(word, guesses, remaining_turns, new_guess):
             return Wrong, remaining_turns-1
 
 
-# def game_over(word, guesses, remaining_turns):
-#     if turns_remaining == 0:
-#         return True, f"You lost! The word was {secret_word}"
-#     masked = mask_word(secret_word, guesses)
-#     if "-" in masked:
-#         return False, None
-#     else:
-#         return True, f"You guessed it! The word was {secret_word}"
+def game_over(word, guesses, remaining_turns):
+    if remaining_turns == 0:
+        return True, f"You lost! The word was {word}"
+    masked = masked_word(word, guesses)
+    if "-" in masked:
+        return False, None
+    else:
+        return True, f"You guessed it! The word was {word}"
 
 
 # def main():

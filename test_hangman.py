@@ -124,13 +124,13 @@ def test_check_wrong():
     assert remaining_turns == 5
     assert guesses == ["i", "t", "p", "x"]
 
-def test_game_over_over_won():
+def test_game_over_won():
     word = "elephant"
     guesses = ["e", "l", "e", "p", "h" ,"a" ,"n", "t"]
     remaining_turns = 5
     finished, message = hangman.game_over(word, guesses, remaining_turns)
     assert finished
-    assert message == "The word is elephant"
+    assert message == "You guessed it! The word was elephant"
 
 
 # def test_check_game_win():
