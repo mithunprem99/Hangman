@@ -112,6 +112,18 @@ def test_check_correct_word():
     assert remaining_turns == 6
     assert guesses == ["l", "t", "a"]
 
+def test_check_wrong():
+    word = "elephant"
+    guesses = ["i", "t", "p"]
+    remaining_turns = 6
+    new_guess = "x"
+    status, remaining_turns = hangman.check_guesses(word, guesses, 
+                                            remaining_turns, 
+                                            new_guess)
+    assert status == hangman.Wrong
+    assert remaining_turns == 5
+    assert guesses == ["i", "t", "p", "x"]
+
 
 # def test_check_game_win():
 #     word = 'elephant'
