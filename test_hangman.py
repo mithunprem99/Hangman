@@ -69,13 +69,14 @@ def test_masked_word_repeated_letters():
     word = 'elephant'
     assert hangman,masked_word(word, ['e']) == 'e-e-----'
 
-def test_status():
-    secret_word = "elephant"
-    guesses = ["e","l","x"]
-    remaining_turns = 3
-    assert hangman.get_status(secret_word, guesses, remaining_turns) == '''Seceret word:---ph----
-    Guesses : e l x
-    Turns_Remaining : 3'''
+def test_get_status_basic():
+    secret_word = "helicopter"
+    guesses = ["c", "o", "x"]
+    turns_remaining = 3
+
+    assert hangman.get_status(secret_word, guesses, turns_remaining) == """Secret word:----co----
+Guesses : c o x
+Remaining turns : 3"""
 
 # def test_check_game_win():
 #     word = 'elephant'

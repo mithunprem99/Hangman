@@ -42,6 +42,12 @@ def get_partial_solution(word):
 def user_input():
     return input("Your Guess").islower()
 
+def get_status(secret_word, guesses, turns_remaining):
+    mask_word = masked_word(secret_word, guesses)
+    guessed_letters = " ".join(guesses)
+    return f"""Secret word:{mask_word}
+Guesses : {guessed_letters}
+Remaining turns : {turns_remaining}"""
 
 
 # def main():
