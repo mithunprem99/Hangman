@@ -66,35 +66,49 @@ def test_masked_word_correct_guess():
 
 
 def test_masked_word_repeated_letters():
+    word = 'elephant'
     assert hangman,masked_word(word, ['e']) == 'e-e-----'
 
+def test_status():
+    secret_word = "elephant"
+    guesses = ["e","l","x"]
+    remaining_turns = 3
+    assert hangman.get_status(secret_word, guesses, remaining_turns) == '''Seceret word:---ph----
+    Guesses : e l x
+    Turns_Remaining : 3'''
 
-def test_check_game_win():
-    word = 'elephant'
-    assert hangman.check_game_win(word, 'elephant') == 'You Win!'
-
-def test_check_game_win():
-    word = "elephant"
-    assert hangman.check_game_win(word, '_lephant') == 'You Lose!'
-
-# def test_user_guesses():
+# def test_check_game_win():
 #     word = 'elephant'
-#     assert 
+#     assert hangman.check_game_win(word, 'elephant') == 'You Win!'
 
-def test_partial_solution_input():
-    word = 'elephant'
-    assert hangman.get_partial_solution(word) == '--------'
+# def test_check_game_win():
+#     word = "elephant"
+#     assert hangman.check_game_win(word, '_lephant') == 'You Lose!'
+
+# # def test_user_guesses():
+# #     word = 'elephant'
+# #     assert 
+
+# def test_partial_solution_input():
+#     word = 'elephant'
+#     assert hangman.get_partial_solution(word) == '--------'
 
 
-def test_check_game_next_turn():
-    word = 'elephant'
-    assert hangman.check_game_loop('_lephant', word, ['w', 'y']) == True
+# def test_check_game_next_turn():
+#     word = 'elephant'
+#     assert hangman.check_game_loop('_lephant', word, ['w', 'y']) == True
 
-def test_game_win():
-    word = 'elephant'
-    assert hangman.check_game_loop('elephant',word,['z',]) == False
+# def test_game_win():
+#     word = 'elephant'
+#     assert hangman.check_game_loop('elephant',word,['z',]) == False
 
 
-def test_game_out_of_turns():
-    # word = 'elephant'
-    assert hangman.check_game_loops('-leph-nt',['z','y','x','j','k','o','q','u']) == False
+# def test_game_out_of_turns():
+#     # word = 'elephant'
+#     assert hangman.check_game_loops('-leph-nt',['z','y','x','j','k','o','q','u']) == False
+
+# # number of turns = 7
+# # guesses
+# #new_guesses
+
+

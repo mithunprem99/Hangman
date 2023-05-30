@@ -30,11 +30,23 @@ def get_partial_solution(word):
     return '-'*len(word)
 
 
-def check_game_loop(partial_word , word, guesses):
-    if partial_word != word:
-        return True
-    return False
+# def check_game_loop(partial_word , word, guesses):
+#     if partial_word != word:
+#         return True
+#     return False
 
-def check_game_loops(partial_word,word):
-    if partial_word != word:
-        return False
+# def check_game_loops(partial_word,word):
+#     if partial_word != word:
+#         return False
+
+def user_input():
+    return input("Your Guess").islower()
+
+
+
+# def main():
+#     random_word = get_random_word()
+#     guesses = []
+#     turns_left = 7
+#     while True:
+#         guess = user_input()
